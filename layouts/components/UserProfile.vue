@@ -46,26 +46,26 @@ const userProfileList = [
       params: { tab: 'account' },
     },
   },
-  {
-    type: 'navItem',
-    icon: 'ri-file-text-line',
-    title: 'Billing Plan',
-    to: {
-      name: 'pages-account-settings-tab',
-      params: { tab: 'billing-plans' },
-    },
-    badgeProps: {
-      color: 'error',
-      content: '4',
-    },
-  },
+  // {
+  //   type: 'navItem',
+  //   icon: 'ri-file-text-line',
+  //   title: 'Billing Plan',
+  //   to: {
+  //     name: 'pages-account-settings-tab',
+  //     params: { tab: 'billing-plans' },
+  //   },
+  //   badgeProps: {
+  //     color: 'error',
+  //     content: '4',
+  //   },
+  // },
   { type: 'divider' },
-  {
-    type: 'navItem',
-    icon: 'ri-money-dollar-circle-line',
-    title: 'Pricing',
-    to: { name: 'pages-pricing' },
-  },
+  // {
+  //   type: 'navItem',
+  //   icon: 'ri-money-dollar-circle-line',
+  //   title: 'Pricing',
+  //   to: { name: 'pages-pricing' },
+  // },
   {
     type: 'navItem',
     icon: 'ri-question-line',

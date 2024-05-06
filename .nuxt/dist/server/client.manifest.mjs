@@ -1,0 +1,1 @@
+export { default } from "file:///Users/noersa.eka/Development/Playground/nuxt-core-materio/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

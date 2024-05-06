@@ -16,7 +16,7 @@ const redirects = [
         const userRole = sessionData.value?.user.role
 
         if (userRole === 'admin')
-          return { name: 'dashboards-crm' }
+          return { name: 'mis-analytics-news' }
         if (userRole === 'client')
           return { name: 'access-control' }
 

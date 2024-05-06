@@ -24,15 +24,15 @@ export default defineNuxtRouteMiddleware(to => {
   }
   if (!canNavigate(to)) {
     /* eslint-disable indent */
-            return navigateTo(isLoggedIn
-                ? { name: 'not-authorized' }
-                : {
-                    name: 'login',
-                    query: {
-                        ...to.query,
-                        to: to.fullPath !== '/' ? to.path : undefined,
-                    },
-                })
-            /* eslint-enable indent */
+    return navigateTo(isLoggedIn
+      ? { name: 'not-authorized' }
+      : {
+        name: 'login',
+        query: {
+          ...to.query,
+          to: to.fullPath !== '/' ? to.path : undefined,
+        },
+      })
+    /* eslint-enable indent */
   }
 })

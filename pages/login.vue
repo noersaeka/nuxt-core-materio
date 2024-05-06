@@ -75,6 +75,8 @@ async function login() {
 
   ability.update(user.abilityRules ?? [])
 
+  // console.log('router',route.query.to);
+  // return false;
   navigateTo(route.query.to ? String(route.query.to) : '/', { replace: true })
 }
 
@@ -96,48 +98,20 @@ const onSubmit = () => {
     </div>
   </NuxtLink>
 
-  <VRow
-    no-gutters
-    class="auth-wrapper"
-  >
-    <VCol
-      md="8"
-      class="d-none d-md-flex position-relative"
-    >
+  <VRow no-gutters class="auth-wrapper">
+    <VCol md="8" class="d-none d-md-flex position-relative">
       <div class="d-flex align-center justify-end w-100 h-100 pa-10 pe-0">
-        <VImg
-          max-width="797"
-          :src="authThemeImg"
-          class="auth-illustration"
-        />
+        <VImg max-width="797" :src="authThemeImg" class="auth-illustration" />
       </div>
 
-      <img
-        class="auth-footer-mask"
-        height="360"
-        :src="authThemeMask"
-      >
+      <img class="auth-footer-mask" height="360" :src="authThemeMask">
 
-      <VImg
-        :src="tree1"
-        alt="tree image"
-        height="190"
-        width="90"
-        class="auth-footer-tree"
-      />
+      <VImg :src="tree1" alt="tree image" height="190" width="90" class="auth-footer-tree" />
     </VCol>
 
-    <VCol
-      cols="12"
-      md="4"
-      class="auth-card-v2 d-flex align-center justify-center"
-      style="background-color: rgb(var(--v-theme-surface));"
-    >
-      <VCard
-        flat
-        :max-width="500"
-        class="mt-12 mt-sm-0 pa-4"
-      >
+    <VCol cols="12" md="4" class="auth-card-v2 d-flex align-center justify-center"
+      style="background-color: rgb(var(--v-theme-surface));">
+      <VCard flat :max-width="500" class="mt-12 mt-sm-0 pa-4">
         <VCardText>
           <h4 class="text-h4 mb-1">
             Welcome to <span class="text-capitalize">{{ themeConfig.app.title }}!</span> 👋🏻
@@ -147,10 +121,7 @@ const onSubmit = () => {
           </p>
         </VCardText>
         <VCardText>
-          <VAlert
-            color="primary"
-            variant="tonal"
-          >
+          <VAlert color="primary" variant="tonal">
             <p class="text-caption mb-2 text-primary">
               Admin Email: <strong>admin@demo.com</strong> / Pass: <strong>admin</strong>
             </p>
@@ -161,84 +132,49 @@ const onSubmit = () => {
         </VCardText>
 
         <VCardText>
-          <VForm
-            ref="refVForm"
-            @submit.prevent="onSubmit"
-          >
+          <VForm ref="refVForm" @submit.prevent="onSubmit">
             <VRow>
               <!-- email -->
               <VCol cols="12">
-                <VTextField
-                  v-model="credentials.email"
-                  label="Email"
-                  placeholder="johndoe@email.com"
-                  type="email"
-                  autofocus
-                  :rules="[requiredValidator, emailValidator]"
-                  :error-messages="errors.email"
-                />
+                <VTextField v-model="credentials.email" label="Email" placeholder="johndoe@email.com" type="email"
+                  autofocus :rules="[requiredValidator, emailValidator]" :error-messages="errors.email" />
               </VCol>
 
               <!-- password -->
               <VCol cols="12">
-                <VTextField
-                  v-model="credentials.password"
-                  label="Password"
-                  placeholder="············"
-                  :rules="[requiredValidator]"
-                  :type="isPasswordVisible ? 'text' : 'password'"
+                <VTextField v-model="credentials.password" label="Password" placeholder="············"
+                  :rules="[requiredValidator]" :type="isPasswordVisible ? 'text' : 'password'"
                   :error-messages="errors.password"
                   :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
-                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
-                />
+                  @click:append-inner="isPasswordVisible = !isPasswordVisible" />
 
                 <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-2">
-                  <VCheckbox
-                    v-model="rememberMe"
-                    label="Remember me"
-                  />
-                  <NuxtLink
-                    class="text-primary"
-                    :to="{ name: 'forgot-password' }"
-                  >
+                  <VCheckbox v-model="rememberMe" label="Remember me" />
+                  <NuxtLink class="text-primary" :to="{ name: 'forgot-password' }">
                     Forgot Password?
                   </NuxtLink>
                 </div>
 
-                <VBtn
-                  block
-                  type="submit"
-                >
+                <VBtn block type="submit">
                   Login
                 </VBtn>
               </VCol>
 
               <!-- create account -->
-              <VCol
-                cols="12"
-                class="text-center text-base"
-              >
-                <span>New on our platform?</span> <NuxtLink
-                  class="text-primary d-inline-block"
-                  :to="{ name: 'register' }"
-                >
+              <VCol cols="12" class="text-center text-base">
+                <span>New on our platform?</span>
+                <NuxtLink class="text-primary d-inline-block" :to="{ name: 'register' }">
                   Create an account
                 </NuxtLink>
               </VCol>
-              <VCol
-                cols="12"
-                class="d-flex align-center"
-              >
+              <VCol cols="12" class="d-flex align-center">
                 <VDivider />
                 <span class="mx-4">or</span>
                 <VDivider />
               </VCol>
 
               <!-- auth providers -->
-              <VCol
-                cols="12"
-                class="text-center"
-              >
+              <VCol cols="12" class="text-center">
                 <AuthProvider />
               </VCol>
             </VRow>

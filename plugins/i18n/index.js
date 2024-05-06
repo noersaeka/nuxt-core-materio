@@ -15,7 +15,7 @@ export const getI18n = () => {
       messages,
     })
   }
-  
+
   return _i18n
 }
 export default defineNuxtPlugin(nuxtApp => {

@@ -28,7 +28,7 @@ import { VerticalNavLayout } from '@layouts'
           <VIcon icon="ri-menu-line" />
         </IconBtn>
 
-        <NavSearchBar class="ms-lg-n2" />
+        <!-- <NavSearchBar class="ms-lg-n2" /> -->
 
         <VSpacer />
 
@@ -37,8 +37,8 @@ import { VerticalNavLayout } from '@layouts'
           :languages="themeConfig.app.i18n.langConfig"
         />
         <NavbarThemeSwitcher />
-        <NavbarShortcuts />
-        <NavBarNotifications class="me-2" />
+        <!-- <NavbarShortcuts /> -->
+        <!-- <NavBarNotifications class="me-2" /> -->
         <UserProfile />
       </div>
     </template>

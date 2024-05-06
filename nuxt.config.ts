@@ -7,8 +7,8 @@ import { fileURLToPath } from 'node:url'
 export default defineNuxtConfig({
   app: {
     head: {
-      titleTemplate: '%s - NuxtJS Admin Template',
-      title: 'Materio',
+      titleTemplate: '%s - Media Inteligence System',
+      title: 'MIS',
 
       link: [{
         rel: 'icon',
